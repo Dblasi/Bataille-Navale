@@ -23,7 +23,7 @@ public class Bateau {
 			fin = B;
 		}
 		if(Point.tailleSegment(deb, fin) != type.getTaille())
-			throw new Exception("Coordonnées du bateau invalide");
+			throw new Exception("Coordonnées du bateau invalide taille non conforme");
 		this.coorDebut = deb;
 		this.coorFin = fin;
 		this.setPtVie(type.getTaille());

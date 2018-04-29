@@ -29,6 +29,7 @@ public class main {
 					System.out.println("Ma zone de flotte :\n"+J1.getZoneFlotte());
 				} catch (Exception e) {
 					test = false;
+					System.out.println(e.getMessage());
 				}
 			} while(!test);
 		}

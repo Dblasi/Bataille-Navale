@@ -59,7 +59,6 @@ public class Grille implements Cloneable {
 		for(int x = b.getCoorDebut().getX(); x <= b.getCoorFin().getX(); x++)
 			for(int y = b.getCoorDebut().getY(); y <= b.getCoorFin().getY(); y++)
 				cellules.add(getCellule(y, x));
-		System.out.println(cellules);
 		return cellules;
 	}
 }
