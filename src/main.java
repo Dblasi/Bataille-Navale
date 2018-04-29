@@ -87,12 +87,12 @@ public class main {
 		Point p;
 		System.out.println("votre zone de tire : \n" + g);
 		do { 
-			if(test) System.out.println("Vous n'êtes pas dans la zone de tire !");
+			if(test) System.out.println(" Tire impossible  !");
 			System.out.print("Ou voulez vous tirer :\t");
 			x = sc.nextInt();
 			y = sc.nextInt();
 			p = new Point(y,x);
-			test = x < 0 || x > g.getLargeur() || y < 0 || y > g.getLongueur() || g.valeurCellule(p) != 0;
+			test = p.getX() < 0 || p.getX() > g.getLargeur()-1 || p.getY() < 0 || p.getY() > g.getLongueur()-1 || g.valeurCellule(p) != 0;
 		}while(test);
 		return p;
 	}
