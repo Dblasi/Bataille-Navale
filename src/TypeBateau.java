@@ -24,6 +24,6 @@ public enum TypeBateau {
 	
 	@Override
 	public String toString() {
-		return this.name()+"("+this.getTaille()+")";
+		return this.name()+"( de taille "+this.getTaille()+")";
 	}
 }

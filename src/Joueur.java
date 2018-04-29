@@ -30,10 +30,13 @@ public class Joueur {
 	public boolean ajouterBateau (Bateau bateau) {
 		for(Bateau b : flotte)
 			for(Point p : bateau.getPoints())
-				if(p.inSegment(b.getCoorDebut(), b.getCoorFin())) return false;
+				if(p.inSegment(b.getCoorDebut(), b.getCoorFin())) { 
+					System.out.println(" ce bateau se supperpose avec un autre !");
+		return false;}
 		
 		for(Point p : bateau.getPoints())
-			if(p.inSegment(new Point(0, 0),new Point(zoneFlotte.getLargeur(),zoneFlotte.getLongueur()))) return false;
+			if(p.inSegment(new Point(0, 0),new Point (zoneFlotte.getLargeur(),zoneFlotte.getLongueur()))){ 
+				return false;}
 		
 		flotte.add(bateau);
 		for(int y = bateau.getCoorDebut().getY(); y <= bateau.getCoorFin().getY(); y++)
@@ -56,8 +59,8 @@ public class Joueur {
 	public void rapportAttaque(Point p, Valeur resultat, Joueur ennemi) {
 		if(resultat == Valeur.coule) {
 			Bateau b = ennemi.recupererBateau(p);
-			for(Cellule c : ennemi.zoneTire.etenduBateau(b))
-				c.setVal(Valeur.coule);
+			for(Cellule c : ennemi.zoneFlotte.etenduBateau(b))
+				zoneTire.getCellule(c.getCoord().getX(), c.getCoord().getY()).setVal(Valeur.coule);
 			ennemi.flotte.remove(b);
 		}
 		else zoneTire.getCellule(p.getX(), p.getY()).setVal(resultat);
