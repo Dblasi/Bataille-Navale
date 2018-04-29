@@ -7,10 +7,10 @@ public class main {
 	
 	public static void main(String[] args) {
 		List<Bateau> bateaux = new ArrayList<>() {{
-			/*add(new Bateau(TypeBateau.porte_avions));
+			add(new Bateau(TypeBateau.porte_avions));
 			add(new Bateau(TypeBateau.croiseur));
 			add(new Bateau(TypeBateau.contre_torpilleur));
-			*/add(new Bateau(TypeBateau.sous_marin));
+			add(new Bateau(TypeBateau.sous_marin));
 			add(new Bateau(TypeBateau.torpilleur));
 		}};
 
